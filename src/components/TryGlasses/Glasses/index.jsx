@@ -1,83 +1,20 @@
 import React, { Component } from 'react';
+import GlassesItem from '../GlassesItem';
 
 class Glasses extends Component {
+	renderGlasses = () => {
+		return this.props.listGlasses.map((glass, idx) => {
+			return (
+				<div className='col-2' key={idx}>
+					<GlassesItem glass={glass} viewDetail={this.props.viewDetail} />
+				</div>
+			);
+		});
+	};
 	render() {
 		return (
 			<div className='glasses mt-4'>
-				<div className='row'>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='col-2'>
-						<div className='glasses-item'>
-							<img
-								src='./glassesImage/v1.png'
-								style={{ width: '100%', padding: '10px', cursor: 'pointer' }}
-								alt=''
-							/>
-						</div>
-					</div>
-				</div>
+				<div className='row'>{this.renderGlasses()}</div>
 			</div>
 		);
 	}

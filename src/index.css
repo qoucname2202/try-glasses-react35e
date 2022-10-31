@@ -80,6 +80,16 @@
 	height: 100px;
 	border-bottom: 4px solid rgba(255, 101, 81, 0.3);
 }
+.content-right {
+	padding: 0px 4px;
+	background-color: rgba(249, 176, 106, 0.75);
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	display: none;
+	border-bottom: 4px solid rgba(255, 101, 81, 0.3);
+}
 .model-title {
 	font-size: 16px;
 	margin-top: 5px !important;

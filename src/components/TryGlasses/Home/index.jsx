@@ -4,8 +4,21 @@ import Glasses from '../Glasses';
 import Header from '../Header';
 import Model from '../Model';
 class Home extends Component {
+	state = {
+		glassDetail: {
+			id: 0,
+			price: 0,
+			name: '',
+			url: '',
+			desc: '',
+		},
+	};
+	viewGlassDetail = glassInfo => {
+		this.setState({
+			glassDetail: glassInfo,
+		});
+	};
 	render() {
-		console.log(data);
 		return (
 			<div
 				className='main'
@@ -13,8 +26,8 @@ class Home extends Component {
 			>
 				<Header />
 				<div className='container'>
-					<Model />
-					<Glasses />
+					<Model glassInfo={this.state.glassDetail} />
+					<Glasses listGlasses={data} viewDetail={this.viewGlassDetail} />
 				</div>
 			</div>
 		);
